@@ -1,0 +1,777 @@
+body{/*写主体内容时好调试*/
+    min-height: 6000px;
+}
+/* 全部分类菜单 */
+.slider-nav{
+    background-color: rgba(0,0,0,0.6);
+    width: 234px;
+    height: 420px;
+    border: none;
+}
+.slider-nav .slider-li .name{
+    color: #fff;
+}
+#page-all-nav .slider-nav{
+    visibility: visible;
+}
+
+/* 首页轮播 */
+.idx-banner{
+    position: relative;
+    height: 460px;
+    overflow: hidden;
+}
+.idx-banner ul{
+    width: 20000px;
+    height: 460px;
+}
+.idx-banner li{
+    width: 1206px;
+    height: 460px;
+    float: left;
+    position: relative;
+}
+.idx-banner li img{
+    /* display: none; */
+    width: 1206px;
+    height: 460px;
+}
+.idx-banner li a{
+    position: absolute;
+    width: 972px;
+    height: 460px;
+    /* background-color: rgba(0,0,0,0.3); */
+    top: 0;
+    right: 0;
+}
+.idx-banner .btn{
+    position: absolute;
+    width: 41px;
+    height: 51px;
+    top: 50%;/*不能用像素写，放大缩小时候会错位，解决办法找父盒子，子盒子高度写50%*/
+    margin-top: -35px;
+    padding-top: 18px;
+    background-size: 100%;
+}
+.idx-banner .btn.iconfont{
+    font-size: 35px;
+    color: #d8d8d8;
+}
+.idx-banner .btn.prev{
+    left: 234px;
+}
+.idx-banner .btn.prev:hover{
+    color: #fff;
+    background-color: #7f7f7f;
+}
+.idx-banner .btn.next{
+    right: 1px;
+}
+.idx-banner .btn.next:hover{
+    color: #fff;
+    background-color: #7f7f7f;
+}
+/* .idx-banner .btn.prev{
+    left: 234px;
+    background: url(../img/xiangzuo.png) no-repeat;
+    background-size: 100%;
+
+}
+.idx-banner .btn.prev:hover{
+    left: 234px;
+    background: url(../img/xiangzuo1.png) no-repeat;
+    background-size: 100%;
+}
+.idx-banner .btn.next{
+    right: 0;
+    background: url(../img/xiangyou.png) no-repeat 0 45%;
+    background-size: 100%;
+}
+.idx-banner .btn.btn.next:hover{
+    right: 0;
+    background: url(../img/xiangyou1.png) no-repeat 0 45%;
+    background-size: 100%;
+} */
+.idx-banner .page{
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 10px;
+    text-align: right;
+    padding-right: 35px;
+}
+.idx-banner .page a{
+    display: inline-block;
+    margin: 0 5px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-color: rgba(255,255,255,0.3);
+    border-radius: 50%;/*设置圆角*/
+    background-color: #f5f5f5;
+    background-color: rgba(0,0,0,0.4);
+}
+.idx-banner .page a:hover{
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.4);
+    border-color: #757575;
+    border-color: rgba(0,0,0,0.4);
+}
+.idx-banner .page span{
+    visibility: hidden;/*隐藏多余数字*/
+}
+
+/* 菜单区域和广告位 */
+.idx-menu-adv{
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.idx-menu-adv .menu{
+    width: 214px;
+    height: 145px;
+    background-color: #5f5750;
+    float: left;
+    padding: 10px;
+}
+.idx-menu-adv .menu li{
+    width: 71px;
+    height: 61px;
+    padding-top: 10px;
+    float: left;
+    text-align: center;
+    color: #c8c5c3;
+    position: relative;
+}
+.idx-menu-adv .menu li span{
+    display: block;/*变为块元素，独占一行，行行隔开*/
+    margin-top: 10px;
+}
+.idx-menu-adv .menu li i{
+    font-size: 20px;
+}
+.idx-menu-adv .menu li.bb:before{/*重点复盘*/
+    content: "";
+    display: block;
+    width: 61px;
+    height: 1px;
+    background-color: #655d56;
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+}
+.idx-menu-adv .menu li.br:after{/*重点复盘*/
+    content: "";
+    display: block;
+    width: 1px;
+    height: 61px;
+    background-color: #655d56;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+.idx-menu-adv .menu li:hover{
+    color: #fff;
+}
+.idx-menu-adv .pic{
+    display: block;
+    width: 304px;
+    height: 165px;
+    margin-left: 20px;
+    float: left;
+}
+.idx-menu-adv .pic img{
+    display: block;
+    width: 304px;
+    height: 165px;
+}
+
+/* 广告图 */
+.idx-adv img{
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* 大内容区域 */
+.idx-container{
+    background-color: #f5f5f5;
+    padding-top: 4px;
+    overflow: hidden;
+}
+.idx-container .idv-adv{
+    margin-top: 40px;
+}
+.idx-title{
+    overflow: hidden;
+    /* 一个容器的第一个子元素的margin-top会转移给父元素的margin-top */
+    /* 解决办法：  父元素加上overflow: hidden; 第一个子元素的margin-top变成父元素的padding-top 父元素加上border*/
+}
+.idx-title .tit{
+    font-size: 22px;
+    color: #666;
+    line-height: 60px;
+}
+.idx-title .see-all{
+    float: right;
+    font-size: 16px;
+    color: #666;
+    position: relative;/*相对自己原来位置走，可以单独使用，但absolute必须有父元素的relative才能用*/
+    top: 20px;
+}
+.idx-title .see-all:hover{
+    color: #ff6700;
+}
+.idx-title .list{
+    width: 400px;
+    float: right;
+    text-align: right;
+    position: relative;
+    top: 18px;
+}
+.idx-title .list li{
+    display: inline-block;/*重点复盘，区别行内块，块元素，行元素区别*/
+    font-size: 16px;
+    margin-left: 26px;
+    padding-bottom: 3px;
+}
+.idx-title .list li.active,
+.idx-title .list li:hover{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;/*下划线*/
+}
+.idx-container .col-5{/*从大的选择器开始写，使得后面 修饰细节 的选择器权重比此选择器高，避免出现选择器覆盖问题*/
+    width: 229px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    float: right;/*如果遇到盒子不能浮动到前一个盒子，先检查一下前一个盒子有没有加浮动*/
+}
+.idx-container .idx-box{
+    height: 616px;
+    clear: both;/*清除两边的浮动，重点复盘*/
+}
+.idx-box .adv-box{
+    float: left;
+}
+/* 左边 */
+.idx-box .adv-box.col-5{
+    margin-left: 0;
+}
+.idx-box .adv-box .single{
+    display: block;
+}
+.idx-box .adv-box .single img{
+    width: 229px;
+    display: block;
+    height: 645px;
+}
+.idx-box .adv-box .double{
+    display: block;
+    height: 300px;
+    margin-bottom: 30px;
+}
+.idx-box .adv-box .double img{
+    height: 315px;
+    width: 100%;
+}
+.idx-box .adv-box .double:last-child,
+.idx-box .adv-box .double.last{
+    margin-bottom: 0px;
+}
+/* 右边 */
+.idx-box .good-box{
+    float: right;
+    width: 976px;
+}
+.idx-box .good-item{
+    background-color: #fff;
+    height: 315px;
+    overflow: hidden;
+    position: relative;
+}
+.idx-box .good-item .tags{
+    width: 64px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -32px;
+    top: 0;
+    color: #fff;
+    z-index: 10;/*没有出现考虑一下层级的问题*/
+    text-align: center;
+    line-height: 20px;
+}
+.idx-box .good-item .tags.new{
+    background-color: #83c441;
+}
+.idx-box .good-item .tags.discount{
+    background-color: #e53935;
+}
+.idx-box .good-item .pic img{
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin: 20px auto;
+}
+.idx-box .good-item .name,
+.idx-box .good-item .desc{
+    white-space: nowrap;/*不换行*/
+    overflow: hidden;
+    text-overflow: ellipsis;/*设置了文本宽度前提下，配合overflow和white-space文本溢出部分变成省略号*/
+    text-align: center;
+    font-weight: normal;
+}
+.idx-box .good-item .name{
+    width: 210px;
+    margin: 0 auto 10px;
+    font-size: 13px;
+}
+.idx-box .good-item .desc{
+    width: 210px;
+    color: #b0b0b0;
+    margin: 0 auto;
+    line-height: 20px;
+}
+.idx-box .good-item .price{
+    text-align: center;
+    margin-top: 20px;
+}
+.idx-box .good-item .price span{
+    color: #ff6700;
+}
+.idx-box .good-item .price i{
+    font-style: normal;
+    text-decoration: line-through;/*删除线*/
+    margin-left: 5px;
+    color: #b0b0b0;
+}
+.idx-box .good-item .pop{
+    height: 60px;
+    background-color: #ff6700;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5px 25px;
+    display: none;
+}
+.idx-box .good-item .pop h5{
+    font-weight: normal;
+    color: #fff;
+    line-height: 16px;
+    height: 32px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+.idx-box .good-item .pop p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #fff;
+    color: rgba(255,255,255,0.6)
+}
+
+/* 更多 */
+.idx-box .last-more{
+    background-color: #f5f5f5;
+    background-color: transparent;
+}
+.idx-box .last-more:hover{
+    box-shadow: none;
+}
+.idx-box .last-more .good-top,
+.idx-box .last-more .good-more{
+    background-color: #fff;
+    height: 150px;
+    margin-bottom: 15px;
+}
+.idx-box .last-more .sm-img{
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 25px;
+}
+.idx-box .last-more .sm-img img{
+    width: 80px;
+    height: 80px;
+    display: block;
+}
+.idx-box .last-more .text{
+    margin-left: 30px;
+}
+.idx-box .last-more .text h3{
+    font-weight: normal;
+}
+.idx-box .last-more .good-top .text{
+    float: left;
+    margin-top: 40px;
+}
+.idx-box .last-more .good-top h3{
+    width: 94px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.idx-box .last-more .good-top p{
+    color: #ff6700;
+    line-height: 30px;
+}
+.idx-box .last-more .good-more{
+    position: relative;
+    overflow: hidden;
+    /*给父盒子添加溢出隐藏 h3添加
+    margin-top不会把盒子顶下去*/
+}
+.idx-box .last-more .good-more h3{
+    font-size: 18px;
+    margin-top: 40px;
+}
+.idx-box .last-more .good-more p{
+    line-height: 30px;
+}
+.idx-box .last-more .good-more i{
+    font-size: 50px;
+    color: #ff6700;
+    position: absolute;
+    top: 42px;
+    right: 45px;
+}
+/* 为你推荐 */
+.idx-title .page-box{
+    width: 72px;
+    height: 24px;
+    float: right;
+    position: relative;
+    margin-top: 20px;
+}
+.idx-title .page-box a{
+    text-align: center;
+    line-height: 22px;
+    font-size: 16px;
+    display: block;
+    float: left;
+    border: 1px solid #c0c0c0;
+    height: 22px;
+    color: #c0c0c0;
+    width: 33px;
+}
+.idx-title .page-box a.next{
+    border-left: none;
+}
+.idx-title .page-box a.prev.disabled{
+    color: #e0e1e3;
+    border-color: #e0e1e3;
+}
+.idx-title .page-box i{
+    width: 1px;
+    height: 22px;
+    background-color: #c0c0c0;
+    position: absolute;
+    left: 34px;
+}
+.idx-title .page-box i.disabled{
+    background-color: #e0e1e3;
+}
+.idx-title .page-box a:hover{
+    color: #ff6700;
+}
+.idx-title .page-box a.disabled:hover{
+    color: #e0e1e3;
+    cursor: default;
+}
+
+.idx-box.reconmend{
+    overflow: hidden;
+    height: 345px;
+}
+.idx-box.reconmend .good-box{
+    width: 3000px;
+    position: relative;
+}
+.idx-box.reconmend .good-item{
+    margin-left: 0;
+    margin-right: 15px;
+}
+.idx-box.reconmend .good-item .commit{
+    font-weight: normal;
+    text-align: center;
+    margin-top: 10px;
+    color: #b0b0b0;
+}
+.idx-box.reconmend .good-item.first{
+    margin-right: 0;
+}
+
+/* 热评产品 */
+.idx-container .col-4{
+    background-color: #fff;
+    width: 290px;
+    height: 415px;
+    float: left;
+    margin-right: 15px;
+}
+.idx-container .col-4:last-child,
+.idx-container .col-4.last{
+    margin-right: 0px;
+}
+.idx-container .rpcp{
+    height: 415px;
+}
+.rpcp .item{
+    height: 415px;
+}
+.rpcp .item img{
+    width: 100%;
+    height: 212px;
+    display: block;
+    margin-bottom: 30px;
+}
+.rpcp .item .txt{
+    line-height: 24px;
+    margin: 0 30px;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: justify;
+    /*多行省略号*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.rpcp .item .form{
+    margin: 20px 30px;
+    font-weight: normal;
+    color: #b0b0b0;
+}
+.rpcp .item .desc{
+    margin: 0 30px;
+    font-size: 14px;
+    margin-top: 16px;
+}
+.rpcp .item .desc a{
+    color: #333;
+}
+.rpcp .item .desc span {
+    color: #e0e0e0;
+    padding: 0 2px;
+}
+.rpcp .item .desc b{
+    font-weight: normal;
+    color: #ff6700;
+}
+/* 内容 */
+.nr .item .tit{
+    display: block;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.nr .item{
+    height: 420px;
+    position: relative;
+}
+.nr .item .box{
+    height: 300px;
+    overflow: hidden;
+}
+.nr .item .box ul{
+    overflow: hidden;
+    width: 2000px;
+    height: 300px;
+}
+.nr .item .box li{
+    width: 290px;
+    float: left;
+    text-align: center;
+}
+.nr .item .box li .name{
+    font-size: 20px;
+    margin: 0 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+}
+.nr .item .box li .desc{
+    margin: 10px 50px 25px;
+    line-height: 20px;
+    color: #b0b0b0;
+}
+.nr .item .box li .price{
+    margin-bottom: 20px;
+}
+.nr .item .box li .pic,
+.nr .item .box li .pic img{
+    display: block;
+    width: 216px;
+    height: 154px;
+    margin: 0 auto;
+}
+.nr .item .pages{
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 20px;
+    left: 0;
+    text-align: center;
+}
+.nr .item .pages span{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 3px;
+    border: 2px solid #f5f5f5;
+    background-color: #b0b0b0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.nr .item .pages span.active{
+    border-color: #ff6700;
+    background-color: #fff;
+}
+.nr .item .pages span:hover{
+    background-color: #ff6700;
+}
+.nr .item .btn{
+    width: 20px;
+    height: 48px;
+    background-color: #b0b0b0;
+    background-color: rgba(66,66,66,0.2);
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    z-index: 1000;
+    text-align: center;
+    line-height: 48px;
+    color: #fff;
+    font-size: 20px;
+    display: none;
+}
+.nr .item .btn.prev{
+    left: 0;
+}
+.nr .item .btn.next{
+    right: 0;
+}
+.nr .item .btn:hover{
+    background-color: #ccc;
+    background-color: rgba(66,66,66,0.6);
+}
+.nr .item:hover .btn{
+    display: block;
+}
+.nr .item .more{
+    width: 118px;
+    height: 28px;
+    border: 1px solid #eee;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 auto 32px;
+    display: block;
+}
+.nr .item .more:hover{
+    color: #fff !important;
+}
+.nr .item.item-0{
+    border-top: 1px solid #fbc45e;
+}
+.nr .item.item-0 .tit{
+    color: #fbc45e;
+}
+.nr .item.item-0 .more{
+    color: #fbc45e;
+    border-top: #fbc45e;
+}
+.nr .item.item-0 .more:hover{
+    background-color: #fbc45e;
+}
+.nr .item.item-1{
+    border-top: 1px solid #83ce44;
+}
+.nr .item.item-1 .tit{
+    color: #83ce44;
+}
+.nr .item.item-1 .more{
+    color: #83ce44;
+    border-top: #83ce44;
+}
+.nr .item.item-1 .more:hover{
+    background-color: #83ce44;
+}
+.nr .item.item-2{
+    border-top: 1px solid #e53935;
+}
+.nr .item.item-2 .tit{
+    color: #e53935;
+}
+.nr .item.item-2 .more{
+    color: #e53935;
+    border-top: #e53935;
+}
+.nr .item.item-2 .more:hover{
+    background-color: #e53935;
+}
+.nr .item.item-3{
+    border-top: 1px solid #2196f3;
+}
+.nr .item.item-3 .tit{
+    color: #2196f3;
+}
+.nr .item.item-3 .more{
+    color: #2196f3;
+    border-top: #2196f3;
+}
+.nr .item.item-3 .more:hover{
+    background-color: #2196f3;
+}
+
+/* hover样式 */
+.idx-box .good-item:hover,
+.idx-box .adv-box .single:hover,
+.idx-box .adv-box .double:hover,
+.idx-box .last-more .good-top:hover,
+.idx-box .last-more .good-more:hover,
+.rpcp .item:hover,
+.nr .item:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.idx-box .good-item:hover .pop{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
