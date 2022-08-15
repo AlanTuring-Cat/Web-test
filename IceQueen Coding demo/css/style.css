@@ -3,6 +3,7 @@ body{
     font-size: 12px;
     color: #333;
     overflow-y: scroll;
+    min-height: 1206px;/*小于这个数出现滚动条*/
 }
 .container{
     width: 1206px;
@@ -511,29 +512,274 @@ body{
     color: #b0b0b0;
 }
 
+/* 页脚代码 */
+.page-foot .ts{
+    overflow: hidden;
+    margin: 30px auto;
+}
+.page-foot .ts li{
+    width: 240px;
+    border-right: 1px solid #b0b0b0;
+    line-height: 25px;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    color: #616161;
+}
+.page-foot .ts li i{
+    font-size: 22px;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+}
+.page-foot .ts li:hover {
+    color: #ff6700;
+}
+.page-foot .nav .ts li:last-child{
+    border-right: none;
+}
+.page-foot .nav {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 40px;
+    overflow: hidden;/*复盘，此处添加了overfloat hidden 后可将603行背景颜色撑起来*/
+}
+.page-foot .nav .lt{
+    float: left;
+    width: 964px;
+    overflow: hidden;
+    border-right: 1px solid #e0e0e0;
+}
+.page-foot .nav .lt dl{
+    width: 160px;
+    float: left;
+}
+.page-foot .nav .lt dt{
+    color: #424242;
+    font-size: 14px;
+    line-height: 40px;
+}
+.page-foot .nav .lt dd{
+    color: #757575;
+    line-height: 30px;
+}
+.page-foot .nav .lt dd:hover{
+    color: #ff6700;
+}
+.page-foot .nav .gt{
+    float: right;
+    width: 240px;
+    text-align: center;
+}
+.page-foot .nav .gt h3{
+    font-weight: normal;
+    color: #ff6700;
+    font-size: 22px;
+}
+.page-foot .nav .gt h4{
+    font-size: 12px;
+    font-weight: normal;
+    color: #757575;
+    line-height: 30px;
+}
+.page-foot .nav .gt p{
+    color: #757575;
+}
+.page-foot .nav .gt .concat{
+    display: block;
+    width: 128px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #ff6700;
+    color: #ff6700;
+    margin: 20px auto;
+}
+.page-foot .nav .gt .concat i{
+    margin-right: 3px;
+}
+.page-foot .nav .gt .concat:hover {
+    color: #fff;
+    background-color: #ff6700;
+}
+.page-foot .bot{
+    height: 230px;
+    padding-top: 30px;
+    margin-top: 40px;
+    overflow: hidden;
+    background: url(../img/slogan2020.png) #fafafa center 190px no-repeat;
+}
+.page-foot .bot .logo{
+    display: block;
+    float: left;
+    width: 54px;
+    height: 54px;
+    background: url(../img/logo-mi2.png) center no-repeat;
+    background-size: 54px 54px;
+}
+.page-foot .bot .txt{
+    width: 1142px;
+    float: right;
+}
+.page-foot .bot .txt h3{
+    font-weight: normal;
+    color: #757575;
+    line-height: 20px;
+}
+.page-foot .bot .txt h3 span{
+    padding: 0 4px;
+    color: #e0e0e0;
+}
+.page-foot .bot .txt h3 a:hover{
+    color: #ff6700;
+}
+.page-foot .bot .txt p{
+    color: #b0b0b0;
+    line-height: 18px;
+}
+.page-foot .bot .txt p a{
+    margin: 0 3px;
+}
+.page-foot .bot .txt p a:hover{
+    color: #ff6700;
+}
+.page-foot .bot .txt ul{
+    overflow: hidden;
+    margin-top: 8px;
+}
+.page-foot .bot .txt li img,
+.page-foot .bot .txt li{
+    width: 84px;
+    height: 28px;
+    display: block;
+}
+.page-foot .bot .txt li{
+    float: left;
+    margin-right: 10px;
+}
 
+/* 侧边栏样式 */
+.page-slider{
+    position: fixed;
+    right: 0;
+    bottom: 70px;
+    width: 82px;
+}
+.page-slider li{
+    height: 92px;
+    width: 80px;
+    border-bottom: 1px solid #f5f5f5;
+    border-left: 1px solid #f5f5f5;
+    background-color: #fff;
+    border-top: 1px solid #fff;
+    cursor: pointer;
+    position: relative;
 
+}
+.page-slider li i.my-icon{
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(../img/icon-bgs.png);
+    background-size: 180px 180px;
+    margin: 24px auto 0;
+}
+.page-slider li i.icon-app{
+    background-position: -3px -2px;
+}
+.page-slider li i.icon-user{
+    background-position: -3px -38px;
+}
+.page-slider li i.icon-service{
+    background-position: -2px -74px;
+}
+.page-slider li i.icon-concat{
+    background-position: -3px -110px;
+}
+.page-slider li i.icon-car{
+    background-position: -3px -144px;
+}
+.page-slider li i.icon-top{
+    background-image: url(../img/top.png);
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 24px auto 0;
+}
+.page-slider li:hover i.icon-app{
+    background-position: -39px -2px;
+}
+.page-slider li:hover i.icon-user{
+    background-position: -39px -38px;
+}
+.page-slider li:hover i.icon-service{
+    background-position: -38px -74px;
+}
+.page-slider li:hover i.icon-concat{
+    background-position: -39px -110px;
+}
+.page-slider li:hover i.icon-car{
+    background-position: -39px -144px;
+}
+.page-slider li:hover i.icon-top{
+    background-image: url(../img/top-co.png);
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 24px auto 0;
+}
+.page-slider li span{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.page-slider li .pop{
+    position: absolute;
+    right: 82px;
+    top: 0;
+    /* background-color: red; */
+    /*复盘 解决缝隙问题方法*/
+    display: none;
+    padding-right: 10px ;/*用内边距撑开右边*/
+}
+.page-slider li .pop a{
+    display: block;/*同时改为块级元素，撑开盒子*/
+    width: 130px;
+    height: 188px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    border-right: none;
+}
+.page-slider li img{
+    width: 95px;
+    height: 95px;
+    display: block;
+    margin: 24px auto;
+}
+.page-slider li p{
+    text-align: center;
+    width: 95px;
+    margin: 0 auto;
+}
+.page-slider li .arrow{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    position: absolute;
+    right: 0;
+    top: -15px;
+}
+.page-slider li .arrow img{
+    width: 15px;
+    height: 15px;
+}
+.page-slider li:hover .pop{
+    display: block;/*复盘重点，缝隙问题解决*/
+}
+.page-slider li.last{
+    margin-top: 14px;
+    color: #757575;
+}
+.page-slider li:hover span{
+    color: #ff6700;
+}
 
 
 
